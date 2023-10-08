@@ -1,0 +1,87 @@
+////////// 011 //////////
+
+Vue Language Feature (Volar) [VS Extensions]
+TypeScript Vue Plugin (Volar) [VS Extensions]
+ESLint [VS Extensions]
+Prettier [VS Extensions]
+
+
+////////// 013 //////////
+
+npm init vue@3
+    ---- Vitest for Unit Testing   - Yes
+    ---- ESLint for code quality   - Yes
+    ---- Prettier for code formatting   - Yes
+
+npm install
+npm run dev
+
+////////// 014 //////////
+
+VS workspace:
+    ---- Autosave   - onFocusChange
+    ---- Tab Size   - 2
+    ---- Format On save   - *
+    ---- Default Formater   - Prettier
+    ---- CSS -> Lint: Unknown At Rules   - ignore
+
+////////// 015 //////////
+
+ESLint:
+
+"plugin:vue/vue3-essential"   ->   "plugin:vue/vue3-recommended",
+
+rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
+
+////////// 032 //////////
+
+Tailwind
+
+npm install --save-dev tailwindcss postcss autoprefixer
+
+npx tailwindcss init  -p
+
+    ---- content: ["./index.html", "./src/**/*.{vue,js,ts}"],
+
+    ---- index.CSS
+        ---- @tailwind base;
+        ---- @tailwind components;
+        ---- @tailwind utilities;
+
+    ---- main.js
+        ---- import "@/index.css";
+
+    ---- index.html
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+
+    ---- tailwind.config.js
+        extend: {
+          fontFamily: {
+            sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+          },
+        },
+        colors: {
+        "brand-gray-1": "#dadce0",
+        "brand-blue-1": "#1967d2",
+        "brand-green-1": "#137333",
+      },
+
+npm install --save-dev prettier-plugin-tailwindcss
+
+////////// 052 //////////
+
+"test:unit": "vitest --environment jsdom",
+
+npm run test:unit
