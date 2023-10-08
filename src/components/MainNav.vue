@@ -19,11 +19,11 @@ export default {
   name: "MainNav",
   data() {
     return {
-      company: "Bobo Careers",
+      company: "MoMo Careers",
       author: {
         firstName: "Momcilo",
-        lastName: "Perisic",
-        yearOfBirth: 1981,
+        lastName: "Nikolic",
+        yearOfBirth: 1995,
       },
     };
   },
