@@ -27,7 +27,7 @@
 
         <div class="ml-auto flex h-full items-center">
           <ProfileImage class="hover:scale-125" v-if="IsLoggedIn" />
-          <ActionButton v-else @click="loginUser" />
+          <ActionButton v-else text="Sign In" @click="loginUser" />
         </div>
       </div>
     </div>
