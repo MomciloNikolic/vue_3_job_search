@@ -1,7 +1,8 @@
 import { render, screen } from "@testing-library/vue";
 
 import MainNav from "@/components/MainNav.vue";
-import { expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 describe("MainNav", () => {
   it("displays company name", () => {
@@ -25,7 +26,28 @@ describe("MainNav", () => {
       "Students",
       "Jobs",
     ]);
+  });
+  describe("whe the user logs in", () => {
+    it("Displays user profile picture ", async () => {
+      render(MainNav);
 
-    console.log(navigationMenuText);
+      // screen.getByRole("img");
+      let profileImage = screen.queryByRole("img", {
+        // / string /i  sluzi da VUE test ne bude case sensitive
+        name: /User profile image/i,
+      });
+      expect(profileImage).not.toBeInTheDocument();
+
+      const loginButton = screen.getByRole("button", {
+        name: /sign in/i,
+      });
+      // click simulation
+      await userEvent.click(loginButton);
+
+      profileImage = screen.getByRole("img", {
+        name: /User profile image/i,
+      });
+      expect(profileImage).toBeInTheDocument();
+    });
   });
 });

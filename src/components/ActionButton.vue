@@ -2,7 +2,7 @@
   <button
     class="rounded border-0 bg-brand-blue-1 px-5 py-3 font-medium text-white transition hover:shadow-blue"
   >
-    Sing In
+    Sign In
   </button>
 </template>
 

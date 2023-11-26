@@ -26,7 +26,7 @@
         </nav>
 
         <div class="ml-auto flex h-full items-center">
-          <ProfileImage v-if="IsLoggedIn" />
+          <ProfileImage class="hover:scale-125" v-if="IsLoggedIn" />
           <ActionButton v-else @click="loginUser" />
         </div>
       </div>
