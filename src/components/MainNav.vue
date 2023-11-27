@@ -30,7 +30,7 @@
           <ActionButton
             v-else
             text="Sign In"
-            :is-primary="false"
+            type="primary"
             @click="loginUser"
           />
         </div>
