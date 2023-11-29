@@ -7,7 +7,23 @@
 <script>
 export default {
   name: "ActionButton",
-  props: ["text", "type"],
+  props: {
+    text: {
+      // predefined syntax by VUE DEV TEAM
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: false,
+      default: "primary",
+      // predefined syntax by VUE DEV TEAM
+      // This is not requred option
+      validator(value) {
+        return ["primary", "secondary", "error"].includes(value);
+      },
+    },
+  },
   computed: {
     buttonClass() {
       return {
