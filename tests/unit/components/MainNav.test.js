@@ -6,13 +6,25 @@ import userEvent from "@testing-library/user-event";
 
 describe("MainNav", () => {
   it("displays company name", () => {
-    render(MainNav);
+    render(MainNav, {
+      global: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
     const companyName = screen.getByText("MoMo Careers");
     expect(companyName).toBeInTheDocument();
   });
 
   it("displays menu items for navigation", () => {
-    render(MainNav);
+    render(MainNav, {
+      global: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
     const navigationMenuItems = screen.getAllByRole("listitem");
 
     const navigationMenuText = navigationMenuItems.map(
@@ -29,7 +41,13 @@ describe("MainNav", () => {
   });
   describe("whe the user logs in", () => {
     it("Displays user profile picture ", async () => {
-      render(MainNav);
+      render(MainNav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
+      });
 
       // screen.getByRole("img");
       let profileImage = screen.queryByRole("img", {
