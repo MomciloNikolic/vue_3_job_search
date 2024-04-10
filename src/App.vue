@@ -1,6 +1,6 @@
 <template>
   <main-nav />
-  <the-hero />
+  <theHero />
 </template>
 
 <script>
